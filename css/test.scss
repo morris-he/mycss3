@@ -1,0 +1,21 @@
+#content{
+  margin: 10px;
+  .active{
+    color: red;
+    a{
+      color: #00c853;
+      img,span{
+        color: #3e464c;
+      }
+      nav {
+        border: {
+          style: solid;
+          width: 1px;
+          color: #ccc;
+        }
+      }
+    }
+  }
+}
+
+

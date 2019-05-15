@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    .container{
+        width: 300px;
+        margin: 100px auto;
+    }
+    ul{
+        list-style: none;
+    }
+    ul li{
+        float: left;
+        width: 98px;
+        height: 40px;
+        background: #3e464c;
+        text-align: center;
+        line-height: 30px;
+        color: #f5fcff;
+        border:1px solid #f5fcff;
+    }
+    #content{
+        clear: both;
+        width: 300px;
+        height: 400px;
+        background-color: #CCCCCC;
+        color: #3e464c;
+        font-weight: bold;
+    }
+    #content div{
+        display: none;
+    }
+    #content .show{
+        display: block;
+    }
+     .go{
+        background: #CCCCCC;
+        color: #f5fcff;
+    }
+
+</style>
+
+<body>
+<div class="container">
+    <div id="title">
+        <ul >
+            <li class="go">新闻</li>
+            <li>图片</li>
+            <li>军事</li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="show">新闻内容</div>
+        <div>图片内容</div>
+        <div>军事内容</div>
+    </div>
+
+</div>
+<script>
+    window.onload = function () {
+        var title = document.getElementById("title");
+        var lis = title.getElementsByTagName("li");
+        var content = document.getElementById("content");
+        var hdiv = content.getElementsByTagName("div")
+
+        for(var i =0;i<lis.length;i++){
+            lis[i].index=i;
+            lis[i].onmouseover =function () {
+                for(var k = 0;k<lis.length;k++){
+                    lis[k].className="";
+                    hdiv[k].className="";
+                }
+                this.className ="go";
+                hdiv[this.index].className="show";
+            }
+        }
+    }
+</script>
+</body>
+</html>

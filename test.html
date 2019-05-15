@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .clear:after {
+            display: block;
+            content: "clear";
+            height: 0;
+            clear: both;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        .clear:nth-of-type(even) {
+            background-color: #f5fcff;
+        }
+        .left{
+            float: left;
+            width: 300px;
+            height: 400px;
+            opacity: 0;
+            transform: translate(-200px,0px);
+            transition:all 1s ease;
+        }
+        .right{
+            float: right;
+            opacity: 0;
+            transform: translate(-180px,200px);
+            transition:all 1s ease;
+        }
+        .you{
+            float: right;
+            width: 300px;
+            height: 450px;
+            opacity: 0;
+            transform: translate(200px,0px);
+            transition:all 1s ease;
+        }
+        .zuo{
+            float: left;
+            opacity: 0;
+            transform: translate(160px,200px);
+            transition:all 1s ease;
+        }
+        .active .left{
+            transform: translate(180px,70px);
+            opacity: 1;
+        }
+        .active .right{
+            transform: translate(-160px,20px);
+            opacity: 1;
+        }
+        .active .zuo{
+            transform: translate(100px,40px);
+            opacity: 1;
+        }
+        .active .you{
+            transform: translate(-180px,70px);
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1> css3 动画</h1>
+    <section class="clear">
+        <div class="left">
+            <h2>相册备份</h2>
+            <p>WiFi环境下自动备份您手机中的照片，照片随心备份不限量，备份后其他终端随时管理自己的照片。</p>
+        </div>
+        <div class="right">
+            <img src="assets/imgs/1.png" alt="">
+        </div>
+    </section>
+    <section class="clear">
+        <div class="you">
+            <h2>通讯录备份</h2>
+            <p>
+                让你的联系人永不丢失，一键备份联系人，换手机、丢手机、换号码永不发愁。
+            </p>
+        </div>
+        <div class="zuo">
+            <img src="assets/imgs/2.png" alt="">
+        </div>
+    </section>
+    <section class="clear">
+        <div class="left">
+            <h2>文件管理</h2>
+            <p>
+                文件分门别类，支持全局搜索与批量操作，独有略缩图展示模式，帮助您全面掌控您的文件资源，随心所欲。
+            </p>
+        </div>
+        <div class="right">
+            <img src="assets/imgs/3.png" alt="">
+        </div>
+    </section>
+    <section class="clear">
+        <div class="you">
+            <h2>云笔记</h2>
+            <p>
+                收集和整理各种会议记录、日程安排、生活备忘、讲课笔记、地址电话等，保存的笔记可以多种设备跨平台阅读和分享。
+            </p>
+        </div>
+        <div class="zuo">
+            <img src="assets/imgs/2.png" alt="">
+        </div>
+    </section>
+    <section class="clear">
+        <div class="left">
+            <h2>剪贴板 回收站 收藏夹</h2>
+            <p>手机复制、电脑粘贴，电脑复制、手机粘贴，您能在回收站找回过去最多45天您删除的文件，收藏喜欢和重要的文件。
+            </p>
+        </div>
+        <div class="right">
+            <img src="assets/imgs/5.png" alt="">
+        </div>
+    </section>
+</div>
+
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script>
+    $(function () {
+        var index = 0;
+        var position=[20,200,600,900,1200];
+        $(window).scroll(function () {
+            var top = $(window).scrollTop();
+            console.log(top)
+            if(top > position[index]){
+                $("section").eq(index).addClass('active');
+                index++;
+            }
+        })
+    })
+</script>
+</body>
+</html>

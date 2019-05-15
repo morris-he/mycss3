@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container {
+            margin: 200px 400px;
+            perspective: 1200px;
+            perspective-origin:50% -200px;  /*视角*/
+        }
+        .box{
+            width: 200px;
+            margin: 0 auto;
+            transform: rotateY(0deg);
+            transform-style: preserve-3d;
+            transition: all 1s linear;
+
+        }
+        img {
+            display: block;
+            width: 200px;
+            position: absolute;
+            opacity: 1;
+        }
+
+        img:nth-child(1) {
+            transform: rotateY(0deg) translateZ(300px);
+        }
+
+        img:nth-child(2) {
+            transform: rotateY(40deg) translateZ(300px);
+        }
+
+        img:nth-child(3) {
+            transform: rotateY(80deg) translateZ(300px);
+        }
+
+        img:nth-child(4) {
+            transform: rotateY(120deg) translateZ(300px);
+        }
+
+        img:nth-child(5) {
+            transform: rotateY(160deg) translateZ(300px);
+        }
+
+        img:nth-child(6) {
+            transform: rotateY(200deg) translateZ(300px);
+        }
+
+        img:nth-child(7) {
+            transform: rotateY(240deg) translateZ(300px);
+        }
+
+        img:nth-child(8) {
+            transform: rotateY(280deg) translateZ(300px);
+        }
+
+        img:nth-child(9) {
+            transform: rotateY(320deg) translateZ(300px);
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="box">
+        <img src="assets/imgs/11.jpeg" alt="">
+        <img src="assets/imgs/12.jpeg" alt="">
+        <img src="assets/imgs/13.jpg" alt="">
+        <img src="assets/imgs/14.jpg" alt="">
+        <img src="assets/imgs/15.jpg" alt="">
+        <img src="assets/imgs/16.jpeg" alt="">
+        <img src="assets/imgs/17.jpg" alt="">
+        <img src="assets/imgs/18.jpg" alt="">
+        <img src="assets/imgs/13.jpg" alt="">
+    </div>
+</div>
+<!--<script src="assets/js/jquery-3.2.1.min.js"></script>-->
+<script>
+//    $(function () {
+//        var index = 1;
+//        $("img").click(function () {
+//            var deg = index * 40 + "deg";
+//            $(".box").css('transform', 'rotateY(' + deg + ')');
+//            index++;
+//        })
+//    })
+    var index = 1;
+    var img = document.getElementsByTagName("img");
+    var box = document.getElementsByClassName("box")[0];
+
+    for(var i=0;i<img.length;i++){
+        img[i].onclick=function () {
+            var deg=index*40+"deg";
+            box.style.transform ="rotateY("+deg+")";
+            index++;
+        }
+    }
+</script>
+</body>
+</html>

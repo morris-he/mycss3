@@ -1,0 +1,14 @@
+#content {
+  margin: 10px; }
+  #content .active {
+    color: pink; }
+    #content .active a {
+      color: #00c853; }
+      #content .active a img, #content .active a span {
+        color: #3e464c; }
+      #content .active a nav {
+        border-style: solid;
+        border-width: 1px;
+        border-color: #ccc; }
+
+/*# sourceMappingURL=detail.css.map */

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .gray {
+        width: 150px;
+        border-radius: 100px;
+        filter: grayscale(100%);
+        animation: circle 1.5s linear infinite;
+    }
+    .gray:hover{
+        filter: none;
+        cursor: pointer;
+        transform:scale(1.2);
+    }
+    /*关键帧动画*/
+    @-webkit-keyframes circle{
+        0% {
+            transform: rotate(0deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+    .container{
+        width: 100%;
+        margin: 100px auto;
+    }
+    .clear:after{
+        display: block;
+        content: "clear";
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden;
+    }
+    ul{
+        margin-left: 200px;
+        list-style: none;
+        width: 800px;
+    }
+    ul li{
+        float: left;
+        margin: 20px;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        border-radius: 100px;
+    }
+</style>
+<body>
+<div class="container clear">
+    <ul class="clear">
+        <li>
+            <img src="assets/imgs/11.jpeg" alt="" class="gray">
+        </li>
+        <li>
+            <img src="assets/imgs/12.jpeg" alt="" class="gray">
+        </li>
+        <li>
+            <img src="assets/imgs/13.jpg" alt="" class="gray">
+        </li>
+        <li>
+            <img src="assets/imgs/14.jpg" alt="" class="gray">
+        </li>
+        <li>
+            <img src="assets/imgs/15.jpg" alt="" class="gray">
+        </li>
+        <li>
+            <img src="assets/imgs/16.jpeg" alt="" class="gray">
+        </li>
+        <li>
+            <img src="assets/imgs/17.jpg" alt="" class="gray">
+        </li>
+        <li>
+            <img src="assets/imgs/18.jpg" alt="" class="gray">
+        </li>
+    </ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex</title>
+    <style>
+       *{
+           margin: 0;
+           padding: 0;
+       }
+        body{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .container{
+            flex: 1;
+            display: flex;
+        }
+        .header,.footer{
+            width: 100%;
+            height: 80px;
+            background: #3e464c;
+        }
+        .container div{
+            padding: 30px;
+        }
+        .nav{
+            width: 200px;
+            background: #ff6d00;
+        }
+        .content{
+            flex-grow: 1;
+            background: #ffd600;
+        }
+        .slider{
+            width:200px;
+            background: #00c853;
+        }
+       @media (max-width: 600px) {
+           .container {
+               flex-direction: column;
+           }
+           .nav, .slider {
+               width: auto;
+           }
+
+       }
+    </style>
+</head>
+<body>
+<div class="header">
+    Header
+</div>
+<div class="container">
+    <div class="nav">
+        导航
+    </div>
+    <div class="content">
+        内容
+    </div>
+    <div class="slider">
+        边栏
+    </div>
+</div>
+<div class="footer">
+    Footer
+</div>
+
+</body>
+</html>

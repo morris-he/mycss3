@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        .parent {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header, .footer {
+            background: #212121;
+            color: #fff;
+            padding: 20px;
+        }
+        .main {
+            flex: 1;
+            display: flex;
+        }
+        .col-1, .col-2, .col-3 {
+            padding: 20px;
+        }
+        .col-1 {
+            flex-grow: 1;
+            background: #FFEB3B;
+        }
+        .col-2 {
+            background: #7B1FA2;
+            order: -1;
+            width: 220px;
+        }
+        .col-3 {
+            background: #8BC34A;
+            width: 220px;
+        }
+        @media (max-width: 1000px) {
+            .main {
+                flex-direction: column;
+            }
+            .col-2, .col-3 {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="parent">
+    <div class="header">header</div>
+
+    <div class="main">
+        <div class="col-1">主体内容</div>
+        <div class="col-2">导航栏</div>
+        <div class="col-3">侧边栏</div>
+    </div>
+
+    <div class="footer">footer</div>
+</div>
+</body>
+</html>
